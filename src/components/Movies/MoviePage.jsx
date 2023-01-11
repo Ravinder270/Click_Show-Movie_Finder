@@ -87,7 +87,7 @@ class MoviePage extends React.Component {
                             {movie.imdb_id ? <div><a target="_blank" rel="noreferrer" href={`https://www.imdb.com/title/${movie.imdb_id}`}><img src={imdb} width="70" alt="imdb"/></a></div> : ""}
                         </div>
                     </div>
-                    : "This Movie Does Not Exist 😞"}
+                    : ""}
 
                     <div className={styles.castOuter}>
                         {(cast) ? (cast.length) ? <h3 className={styles.castTitle}>Cast:</h3>:"" : ""}
