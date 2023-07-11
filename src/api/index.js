@@ -15,6 +15,17 @@ const GENRESAPI =
 	}
 };
 
+export const getGenres = async () => {
+	try {
+		const {
+			data: { genres },
+		} = await axios.get(GENRESAPI);
+		return genres;
+	} catch (error) {
+		return error;
+	}
+};
+
 export const findGenre = async (id) => {
 	try {
 		const {
