@@ -21,7 +21,7 @@ class App extends React.Component {
         page: 1,
         hasmore: false,
     }
-    
+    //
     async componentDidMount() {
         const btnToggle = document.querySelector("#modeToggle i");
         const theme = localStorage.getItem("theme");
