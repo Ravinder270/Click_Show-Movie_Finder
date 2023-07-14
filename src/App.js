@@ -22,6 +22,32 @@ class App extends React.Component {
         hasmore: false,
     }
     
+    async componentDidMount() {
+        const btnToggle = document.querySelector("#modeToggle i");
+        const theme = localStorage.getItem("theme");
+
+        if (theme === "light") {
+            btnToggle.classList.add("fa-sun");
+            btnToggle.style.padding = "4px 3.8px";
+            btnToggle.classList.remove("fa-moon");
+            document.querySelector("body").classList.add(theme);
+        }
+
+        btnToggle.addEventListener("click", () => {
+            if (btnToggle.classList.contains("fa-moon")) {
+                btnToggle.classList.add("fa-sun");
+                btnToggle.style.padding = "4px 3.8px";
+                btnToggle.classList.remove("fa-moon");
+                localStorage.setItem("theme", "light");
+            } else {
+                btnToggle.classList.add("fa-moon");
+                btnToggle.classList.remove("fa-sun");
+                btnToggle.style.padding = "4px 5px";
+                localStorage.clear();
+            }
+            document.querySelector("body").classList.toggle("light");
+        });
+
         setTimeout(async () => { 
             const movies = await getMovies(DISCOVERSEARCH);
             var hasmore = false;
