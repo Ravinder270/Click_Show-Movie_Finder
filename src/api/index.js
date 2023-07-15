@@ -26,23 +26,7 @@ export const getGenres = async () => {
 	}
 };
 
-export const findGenre = async (id) => {
-	try {
-		const {
-			data: { genres },
-		} = await axios.get(GENRESAPI);
 
-		for (let i = 0; i <= genres.length; i++) {
-			if (id === genres[i].id) {
-				return genres[i].name;
-			} else {
-				return "No Genre";
-			}
-		}
-	} catch (error) {
-		return error;
-	}
-};
 
 export const findMovie = async (id) => {
 	try {
